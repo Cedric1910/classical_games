@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledCell } from "./StyledCell";
+import { StyledCell } from "./styles/StyledCell";
 import { TERMINOS, TETRONOMIS } from "../tetronomis";
 
 const Cell = ({ type }) => (

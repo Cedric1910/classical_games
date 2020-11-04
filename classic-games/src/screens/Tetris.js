@@ -5,6 +5,10 @@ import Start_button from "../components/Start_button";
 import Stage from "../components/Stage";
 import { createStage } from "../gameHelpers";
 import "../index.css";
+import {
+  StyledTetris,
+  StyledTetrisWrapper,
+} from "../components/styles/StyledTetris";
 
 function Tetris(props) {
   return (
