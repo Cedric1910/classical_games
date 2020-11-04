@@ -3,12 +3,13 @@ import Cell from "../components/Cell";
 import Display from "../components/Display";
 import Start_button from "../components/Start_button";
 import Stage from "../components/Stage";
+import { createStage } from "../gameHelpers";
 
 function Tetris(props) {
   return (
     <div id="main-styling">
       <div>
-        <Stage></Stage>
+        <Stage stage={createStage()}></Stage>
         <aside>
           <div id="tetris-displays">
             <Display text="Score:"></Display>
