@@ -8,7 +8,7 @@ export const TETRONOMIS = {
       [0, "I", 0, 0],
       [0, "I", 0, 0],
     ],
-    color: "80,227,230",
+    color: "0,255,255",
   },
   J: {
     shape: [
@@ -16,7 +16,7 @@ export const TETRONOMIS = {
       [0, "J", 0],
       ["J", "J", 0],
     ],
-    color: "0,0,0",
+    color: "255, 51, 153",
   },
   L: {
     shape: [
@@ -24,7 +24,7 @@ export const TETRONOMIS = {
       [0, "L", 0],
       [0, "L", "L"],
     ],
-    color: "100,100,100",
+    color: "255, 153, 0",
   },
   T: {
     shape: [
@@ -32,14 +32,14 @@ export const TETRONOMIS = {
       ["T", "T", "T"],
       [0, "T", 0],
     ],
-    color: "0,0,0",
+    color: "204, 0, 153",
   },
   O: {
     shape: [
       ["O", "O"],
       ["O", "O"],
     ],
-    color: "0,0,0",
+    color: "255, 255, 0",
   },
   S: {
     shape: [
@@ -47,7 +47,7 @@ export const TETRONOMIS = {
       ["S", "S", 0],
       [0, 0, 0],
     ],
-    color: "0,0,0",
+    color: "255, 51, 0",
   },
   Z: {
     shape: [
@@ -55,7 +55,7 @@ export const TETRONOMIS = {
       [0, "Z", "Z"],
       [0, 0, 0],
     ],
-    color: "0,0,0",
+    color: "0, 255, 0",
   },
 };
 
