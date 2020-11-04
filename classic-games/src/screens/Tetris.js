@@ -8,16 +8,15 @@ function Tetris(props) {
   return (
     <div id="main-styling">
       <div>
-        <Stage>
-          <aside>
-            <div id="tetris-displays">
-              <Display text="Score:"></Display>
-              <Display text="Rows completed:"></Display>
-              <Display text="Current Level:"></Display>
-            </div>
-            <Start_button></Start_button>
-          </aside>
-        </Stage>
+        <Stage></Stage>
+        <aside>
+          <div id="tetris-displays">
+            <Display text="Score:"></Display>
+            <Display text="Rows completed:"></Display>
+            <Display text="Current Level:"></Display>
+          </div>
+          <Start_button></Start_button>
+        </aside>
       </div>
     </div>
   );
