@@ -1,14 +1,10 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  width: 100%;
-  height: 100%;
-  background-image: url("./img/tetris_wallpaper.jpg");
   background-repeat: no-repeat;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,6 +13,18 @@ body {
 
 .main-styling {
   border: 5px solid greenyellow;
+  height: 100%;
+  width: 100%;
+}
+
+.home-bg {
+  background-image: url("./img/tetris_wallpaper.jpg");
+  height: 100%;
+  width: 100%;
+}
+
+.tetris-bg {
+  background-image: url("./img/tetris_wallpaper.jpg");
   height: 100%;
   width: 100%;
 }
