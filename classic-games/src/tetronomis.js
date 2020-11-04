@@ -61,8 +61,8 @@ export const TETRONOMIS = {
 
 //creates a random order of all tetris shapes in the app.
 export const randomTetromino = () => {
-  const tetrominos = "ZSOTLJI";
+  const tetrominos = "IJLOSTZ";
   const randTetromino =
     tetrominos[Math.floor(Math.random() * tetrominos.length)];
-  return TETRONOMIS[randomTetromino];
+  return TETRONOMIS[randTetromino];
 };
