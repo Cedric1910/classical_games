@@ -8,8 +8,8 @@ import "../index.css";
 
 function Tetris(props) {
   return (
-    <div id="tetris-bg">
-      <div id="main-styling">
+    <div className="main-styling">
+      <div className="tetris-bg">
         <div>
           <Stage stage={createStage()}></Stage>
           <aside>

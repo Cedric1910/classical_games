@@ -5,28 +5,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  height: 100%;
+  width: 100%;
+
+  background-image: url("./img/home_background.png");
   background-repeat: no-repeat;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-}
-
-.main-styling {
-  border: 5px solid greenyellow;
-  height: 100%;
-  width: 100%;
-}
-
-.home-bg {
-  background-image: url("./img/home_background.png");
-  height: 100%;
-  width: 100%;
-}
-
-.tetris-bg {
-  background-image: url("./img/tetris_wallpaper.jpg");
-  height: 100%;
-  width: 100%;
 }
 
 code {
