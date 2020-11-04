@@ -1,28 +1,39 @@
-import React from "react";
+import { useState } from "react";
 import Cell from "../components/Cell";
 import Display from "../components/Display";
 import Start_button from "../components/Start_button";
 import Stage from "../components/Stage";
-import { createStage } from "../gameHelpers";
 import "../index.css";
 import {
   StyledTetris,
   StyledTetrisWrapper,
 } from "../components/styles/StyledTetris";
+import { usePlayer } from "../hooks/usePlayer";
+import { useStage } from "../hooks/useStage";
 
 function Tetris(props) {
+  const [dropTime, setDroptime] = useState(null);
+  const [gameover, setGameover] = useState(false);
+  const [player] = usePlayer();
+  const [stage, setStage] = useStage(player);
+
+  console.log("re-render");
   return (
     <div className="main-styling">
       <div className="tetris-bg">
         <StyledTetrisWrapper>
           <StyledTetris>
-            <Stage stage={createStage()}></Stage>
+            <Stage stage={stage}></Stage>
             <aside>
-              <div id="tetris-displays">
-                <Display text="Score:"></Display>
-                <Display text="Rows completed:"></Display>
-                <Display text="Current Level:"></Display>
-              </div>
+              {gameover ? (
+                <Display gameOver={gameover} text="Game Over!"></Display>
+              ) : (
+                <div id="tetris-displays">
+                  <Display text="Score:"></Display>
+                  <Display text="Rows completed:"></Display>
+                  <Display text="Current Level:"></Display>
+                </div>
+              )}
               <Start_button></Start_button>
             </aside>
           </StyledTetris>
