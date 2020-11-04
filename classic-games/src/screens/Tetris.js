@@ -1,9 +1,24 @@
 import React from "react";
+import Cell from "../components/Cell";
+import Display from "../components/Display";
+import Start_button from "../components/Start_button";
+import Stage from "../components/Stage";
 
 function Tetris(props) {
   return (
     <div id="main-styling">
-      <h1>This will be the Tetris game page :)</h1>
+      <div>
+        <Stage>
+          <aside>
+            <div id="tetris-displays">
+              <Display text="Score:"></Display>
+              <Display text="Rows completed:"></Display>
+              <Display text="Current Level:"></Display>
+            </div>
+            <Start_button></Start_button>
+          </aside>
+        </Stage>
+      </div>
     </div>
   );
 }
