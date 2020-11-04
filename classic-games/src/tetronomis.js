@@ -1,5 +1,4 @@
-//This class holds the different shapes allowed inthe Tetris minigame.
-
+//This export holds the different shapes allowed inthe Tetris minigame.
 export const TETRONOMIS = {
   0: { shape: [[0]], color: "0,0,0" },
   I: {
@@ -58,4 +57,12 @@ export const TETRONOMIS = {
     ],
     color: "0,0,0",
   },
+};
+
+//creates a random order of all tetris shapes in the app.
+export const RandomTetromino = () => {
+  const tetrominos = "ZSOTLJI";
+  const randTetromino =
+    tetrominos[Math.floor(Math.random() * tetrominos.length)];
+  return TETRONOMIS[RandomTetromino];
 };
