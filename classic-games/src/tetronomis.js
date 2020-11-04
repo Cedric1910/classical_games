@@ -27,4 +27,19 @@ export const TETRONOMIS = {
     ],
     color: "0,0,0",
   },
+  T: {
+    shape: [
+      [0, 0, 0],
+      ["T", "T", "T"],
+      [0, "T", 0],
+    ],
+    color: "0,0,0",
+  },
+  O: {
+    shape: [
+      ["O", "O"],
+      ["O", "O"],
+    ],
+    color: "0,0,0",
+  },
 };
