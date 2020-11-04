@@ -10,17 +10,19 @@ function Tetris(props) {
   return (
     <div className="main-styling">
       <div className="tetris-bg">
-        <div>
-          <Stage stage={createStage()}></Stage>
-          <aside>
-            <div id="tetris-displays">
-              <Display text="Score:"></Display>
-              <Display text="Rows completed:"></Display>
-              <Display text="Current Level:"></Display>
-            </div>
-            <Start_button></Start_button>
-          </aside>
-        </div>
+        <StyledTetrisWrapper>
+          <StyledTetris>
+            <Stage stage={createStage()}></Stage>
+            <aside>
+              <div id="tetris-displays">
+                <Display text="Score:"></Display>
+                <Display text="Rows completed:"></Display>
+                <Display text="Current Level:"></Display>
+              </div>
+              <Start_button></Start_button>
+            </aside>
+          </StyledTetris>
+        </StyledTetrisWrapper>
       </div>
     </div>
   );
