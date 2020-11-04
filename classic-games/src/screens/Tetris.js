@@ -4,6 +4,7 @@ import Display from "../components/Display";
 import Start_button from "../components/Start_button";
 import Stage from "../components/Stage";
 import { createStage } from "../gameHelpers";
+import "../index.css";
 
 function Tetris(props) {
   return (
