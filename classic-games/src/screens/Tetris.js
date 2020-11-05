@@ -69,7 +69,7 @@ function Tetris(props) {
                   <Display text="Current Level:"></Display>
                 </div>
               )}
-              <Start_button onClick={startGame}></Start_button>
+              <Start_button callback={startGame}></Start_button>
             </aside>
           </StyledTetris>
         </StyledTetrisWrapper>
