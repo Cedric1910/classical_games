@@ -18,8 +18,8 @@ function Tetris(props) {
   const [player, updatePlayerPos, resetPlayer] = usePlayer();
   const [stage, setStage] = useStage(player);
 
-  console.log("re-render");
-  console.log("gameover: ", gameover);
+  //console.log("re-render");
+  //console.log("gameover: ", gameover);
 
   const movePlayer = (dir) => {
     updatePlayerPos({ x: dir, y: 0 });
@@ -36,7 +36,9 @@ function Tetris(props) {
     updatePlayerPos({ x: 0, y: 1, collided: false });
   };
 
-  const dropPlayer = () => {};
+  const dropPlayer = () => {
+    drop();
+  };
 
   /* this const takes care of the player being able to move his arrow keys and control the tetris objects */
   const move = ({ keyCode }) => {
