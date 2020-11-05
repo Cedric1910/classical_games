@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { randomTetromino, TETROMINOS } from "../tetronomis";
-import { STAGE_WIDTH } from "../gameHelpers";
+import { STAGE_WIDTH, checkCollision } from "../gameHelpers";
 
 export const usePlayer = () => {
   const [player, setPlayer] = useState({
@@ -30,6 +30,20 @@ export const usePlayer = () => {
   const playerRotate = (stage, dir) => {
     const clonedPlayer = JSON.parse(JSON.stringify(player));
     clonedPlayer.tetromino = rotate(clonedPlayer.tetromino, dir);
+
+    //grabbed from online tutorial as I thought it was extremely clever how you could check for collisions both left and
+    //right before rotating the object into another one.
+    const post = clonedPlayer.pos.x;
+    let offset = 1;
+    while (checkCollision(clonedPlayer, stage, { x: 0, y: 0 })) {
+      clonedPlayer.pos.x += offset;
+      offset = -(offset + (offset > 0 ? 1 : -1));
+      if (offset > clonedPlayer.tetromino[0].length) {
+        rotate(clonedPlayer.tetromino, -dir);
+        clonedPlayer.pos.x = pos;
+        return;
+      }
+    }
 
     setPlayer(clonedPlayer);
   };
