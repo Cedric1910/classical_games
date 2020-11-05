@@ -28,11 +28,26 @@ function Tetris(props) {
 
   const dropPlayer = () => {};
 
-  const move = ({ keycode }) => {};
+  /* this const takes care of the player being able to move his arrow keys and control the tetris objects */
+  const move = ({ keycode }) => {
+    if (!gameover) {
+      if (keycode === 37) {
+        moveplayer(-1);
+      } else if (keycode === 39) {
+        moveplayer(1);
+      } else if (keycode === 40) {
+        dropPlayer();
+      }
+    }
+  };
   return (
     <div className="main-styling">
       <div className="tetris-bg">
-        <StyledTetrisWrapper>
+        <StyledTetrisWrapper
+          role="button"
+          tabIndex="0"
+          onKeyDown={(e) => move(e)}
+        >
           <StyledTetris>
             <Stage stage={stage}></Stage>
             <aside>
