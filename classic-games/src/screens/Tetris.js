@@ -23,7 +23,9 @@ function Tetris(props) {
   const movePlayer = (dir) => {};
 
   const startGame = () => {
-    //resets everything of the previous game.
+    //resets everything to create a brand new game.
+    setStage(createStage());
+    resetPlayer();
   };
 
   //updates the current tetris object in play to drop by 1 tile/square each time while the collision is false
@@ -65,7 +67,7 @@ function Tetris(props) {
                   <Display text="Current Level:"></Display>
                 </div>
               )}
-              <Start_button></Start_button>
+              <Start_button onClick={startGame}></Start_button>
             </aside>
           </StyledTetris>
         </StyledTetrisWrapper>
