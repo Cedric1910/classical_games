@@ -89,7 +89,7 @@ function Tetris(props) {
           role="button"
           tabIndex="0"
           onKeyDown={(e) => move(e)}
-          onKeyUp={(e) => move(e)}
+          onKeyUp={keyUp}
         >
           <StyledTetris>
             <Stage stage={stage}></Stage>
