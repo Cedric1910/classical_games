@@ -15,7 +15,7 @@ import { createStage, checkCollision } from "../gameHelpers";
 function Tetris(props) {
   const [dropTime, setDroptime] = useState(null);
   const [gameover, setGameover] = useState(false);
-  const [player, updatePlayerPos, resetPlayer] = usePlayer();
+  const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage] = useStage(player, resetPlayer);
 
   console.log("re-render");
@@ -61,6 +61,8 @@ function Tetris(props) {
         movePlayer(1);
       } else if (keyCode === 40) {
         dropPlayer();
+      } else if (keyCode === 38) {
+        playerRotate(stage, 1);
       }
     }
   };
