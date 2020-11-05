@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Cell from "../components/Cell";
 import Display from "../components/Display";
-import Start_button from "../components/Start_button";
+import StartButton from "../components/Start_button";
 import Stage from "../components/Stage";
 import "../index.css";
 import {
@@ -18,8 +18,8 @@ function Tetris(props) {
   const [player, updatePlayerPos, resetPlayer] = usePlayer();
   const [stage, setStage] = useStage(player, resetPlayer);
 
-  //console.log("re-render");
-  //console.log("gameover: ", gameover);
+  console.log("re-render");
+  console.log("gameover: ", gameover);
 
   const movePlayer = (dir) => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -84,7 +84,7 @@ function Tetris(props) {
                   <Display text="Current Level:"></Display>
                 </div>
               )}
-              <Start_button callback={startGame}></Start_button>
+              <StartButton callback={startGame}></StartButton>
             </aside>
           </StyledTetris>
         </StyledTetrisWrapper>

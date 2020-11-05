@@ -1,9 +1,8 @@
 import React from "react";
-import Stage from "./Stage";
-import { StartButton } from "./styles/StyledStartButton";
+import { StyledStartButton } from "./styles/StyledStartButton";
 
-const Start_button = ({ callback }) => (
-  <StartButton onClick={callback}> Start game </StartButton>
+const StartButton = ({ callback }) => (
+  <StyledStartButton onClick={callback}>Start Game</StyledStartButton>
 );
 
-export default Start_button;
+export default StartButton;

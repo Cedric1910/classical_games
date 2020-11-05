@@ -1,6 +1,5 @@
-//This export holds the different shapes allowed inthe Tetris minigame.
-export const TETRONOMIS = {
-  0: { shape: [[0]], color: "0,0,0" },
+export const TETROMINOS = {
+  0: { shape: [[0]], color: "0, 0, 0" },
   I: {
     shape: [
       [0, "I", 0, 0],
@@ -8,7 +7,7 @@ export const TETRONOMIS = {
       [0, "I", 0, 0],
       [0, "I", 0, 0],
     ],
-    color: "0,255,255",
+    color: "80, 227, 230",
   },
   J: {
     shape: [
@@ -16,7 +15,7 @@ export const TETRONOMIS = {
       [0, "J", 0],
       ["J", "J", 0],
     ],
-    color: "255, 51, 153",
+    color: "36, 95, 223",
   },
   L: {
     shape: [
@@ -24,22 +23,14 @@ export const TETRONOMIS = {
       [0, "L", 0],
       [0, "L", "L"],
     ],
-    color: "255, 153, 0",
-  },
-  T: {
-    shape: [
-      [0, 0, 0],
-      ["T", "T", "T"],
-      [0, "T", 0],
-    ],
-    color: "204, 0, 153",
+    color: "223, 173, 36",
   },
   O: {
     shape: [
       ["O", "O"],
       ["O", "O"],
     ],
-    color: "255, 255, 0",
+    color: "223, 217, 36",
   },
   S: {
     shape: [
@@ -47,7 +38,15 @@ export const TETRONOMIS = {
       ["S", "S", 0],
       [0, 0, 0],
     ],
-    color: "255, 51, 0",
+    color: "48, 211, 56",
+  },
+  T: {
+    shape: [
+      [0, 0, 0],
+      ["T", "T", "T"],
+      [0, "T", 0],
+    ],
+    color: "132, 61, 198",
   },
   Z: {
     shape: [
@@ -55,14 +54,13 @@ export const TETRONOMIS = {
       [0, "Z", "Z"],
       [0, 0, 0],
     ],
-    color: "0, 255, 0",
+    color: "227, 78, 78",
   },
 };
 
-//creates a random order of all tetris shapes in the app.
 export const randomTetromino = () => {
   const tetrominos = "IJLOSTZ";
   const randTetromino =
     tetrominos[Math.floor(Math.random() * tetrominos.length)];
-  return TETRONOMIS[randTetromino];
+  return TETROMINOS[randTetromino];
 };

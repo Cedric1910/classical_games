@@ -13,8 +13,9 @@ export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
   /*with this im using a nested for loop versus something like a mapping function or forEach loop as we can break out
    *when we need to which I think will allow it to run smoother overall */
 
+  console.log(player.tetromino);
   for (let y = 0; y < player.tetromino.length; y += 1) {
-    for (let x = 0; x < player.tetromino[0].length; x += 1) {
+    for (let x = 0; x < player.tetromino[y].length; x += 1) {
       //firstly check that we are on a proper cell
       if (player.tetromino[y][x] !== 0) {
         //then check that we are in the designated game area. (width + bottom)
