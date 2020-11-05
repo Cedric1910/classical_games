@@ -37,7 +37,7 @@ function Tetris(props) {
   //updates the current tetris object in play to drop by 1 tile/square each time while the collision is false
   const drop = () => {
     if (!checkCollision(player, stage, { x: 0, y: 1 })) {
-      updatePlayerPos({ x: 0, y: 1, collided: false });
+      updatePlayerPos({ x: 0, y: 0.5, collided: false });
     } else {
       // Game Over
       if (player.pos.y < 1) {
