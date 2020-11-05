@@ -10,6 +10,7 @@ import {
 } from "../components/styles/StyledTetris";
 import { usePlayer } from "../hooks/usePlayer";
 import { useStage } from "../hooks/useStage";
+import { createStage } from "../gameHelpers";
 
 function Tetris(props) {
   const [dropTime, setDroptime] = useState(null);
@@ -18,6 +19,16 @@ function Tetris(props) {
   const [stage, setStage] = useStage(player);
 
   console.log("re-render");
+
+  const movePlayer = (dir) => {};
+
+  const startGame = () => {};
+
+  const drop = () => {};
+
+  const dropPlayer = () => {};
+
+  const move = ({ keycode }) => {};
   return (
     <div className="main-styling">
       <div className="tetris-bg">
