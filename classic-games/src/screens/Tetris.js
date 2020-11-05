@@ -15,12 +15,14 @@ import { createStage } from "../gameHelpers";
 function Tetris(props) {
   const [dropTime, setDroptime] = useState(null);
   const [gameover, setGameover] = useState(false);
-  const [player] = usePlayer();
+  const [player, updatePlayerPos, resetPlayer] = usePlayer();
   const [stage, setStage] = useStage(player);
 
   console.log("re-render");
 
-  const movePlayer = (dir) => {};
+  const movePlayer = (dir) => {
+    updatePlayerPos({ x: dir, y: 0 });
+  };
 
   const startGame = () => {
     //resets everything to create a brand new game.
