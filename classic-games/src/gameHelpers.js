@@ -7,3 +7,30 @@ export const createStage = () =>
   Array.from(Array(STAGE_HEIGHT), () =>
     new Array(STAGE_WIDTH).fill([0, "clear"])
   );
+
+/* This is a vvery simple collision detection mode but should do the job properly for my simple game of Tetris I hope. */
+export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
+  /*with this im using a nested for loop versus something like a mapping function or forEach loop as we can break out
+   *when we need to which I think will allow it to run smoother overall */
+
+  for (let y = 0; y < player.tetromino.length; y += 1) {
+    for (let x = 0; x < player.tetromino[0].length; x += 1) {
+      //firstly check that we are on a proper cell
+      if (player.tetromino[y][x] !== 0) {
+        //then check that we are in the designated game area. (width + bottom)
+        /* Then check that we are in the designated width and height of the game area, and also that the
+         * next cell isnt set to clear as this will mean we arent actually colliding with anything
+         */
+        if (
+          !stage[y + player.pos.y + moveY] ||
+          !stage[y + player.pos.y + moveY][x + player.pos.x + moveX] ||
+          stage[y + player.pos.y + moveY][x + player.pos.x + moveX][
+            1 !== "clear"
+          ]
+        ) {
+          return true;
+        }
+      }
+    }
+  }
+};
