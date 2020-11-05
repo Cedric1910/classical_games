@@ -41,9 +41,9 @@ function Tetris(props) {
   const move = ({ keycode }) => {
     if (!gameover) {
       if (keycode === 37) {
-        moveplayer(-1);
+        movePlayer(-1);
       } else if (keycode === 39) {
-        moveplayer(1);
+        movePlayer(1);
       } else if (keycode === 40) {
         dropPlayer();
       }
