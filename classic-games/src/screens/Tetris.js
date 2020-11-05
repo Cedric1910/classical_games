@@ -10,6 +10,7 @@ import {
 } from "../components/styles/StyledTetris";
 import { usePlayer } from "../hooks/usePlayer";
 import { useStage } from "../hooks/useStage";
+import { useInterval } from "../hooks/useInterval";
 import { createStage, checkCollision } from "../gameHelpers";
 
 function Tetris(props) {
@@ -30,6 +31,7 @@ function Tetris(props) {
   const startGame = () => {
     //resets everything to create a brand new game.
     setStage(createStage());
+    setDroptime(1000);
     resetPlayer();
     setGameover(false);
   };
@@ -48,7 +50,16 @@ function Tetris(props) {
     }
   };
 
+  const keyUp = ({ keyCode }) => {
+    if (!gameover) {
+      if (keyCode === 40) {
+        setDroptime(1000);
+      }
+    }
+  };
+
   const dropPlayer = () => {
+    setDroptime(null);
     drop();
   };
 
@@ -66,6 +77,11 @@ function Tetris(props) {
       }
     }
   };
+
+  useInterval(() => {
+    drop();
+  }, dropTime);
+
   return (
     <div className="main-styling">
       <div className="tetris-bg">
@@ -73,6 +89,7 @@ function Tetris(props) {
           role="button"
           tabIndex="0"
           onKeyDown={(e) => move(e)}
+          onKeyUp={(e) => move(e)}
         >
           <StyledTetris>
             <Stage stage={stage}></Stage>
