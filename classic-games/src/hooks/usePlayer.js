@@ -33,7 +33,7 @@ export const usePlayer = () => {
 
     //grabbed from online tutorial as I thought it was extremely clever how you could check for collisions both left and
     //right before rotating the object into another one.
-    const post = clonedPlayer.pos.x;
+    const pos = clonedPlayer.pos.x;
     let offset = 1;
     while (checkCollision(clonedPlayer, stage, { x: 0, y: 0 })) {
       clonedPlayer.pos.x += offset;
