@@ -3,6 +3,7 @@ import Tetris from "./screens/Tetris";
 import Home from "./screens/Home";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
+import "./index.css";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/games/tetris" component={Tetris} />
         <Route path="/homepage" component={Home} />
       </div>
+      <div className="footer">V1.0.0</div>
     </BrowserRouter>
   );
 }

@@ -11,7 +11,6 @@ body {
 
   background-image: url("./img/home_background.png");
   background-repeat: no-repeat;
-  background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
 }
@@ -30,4 +29,11 @@ code {
 a:link,
 a:visited {
   color: red;
+}
+
+.footer {
+  height: 2rem;
+  font-size: 10px;
+  text-align: right;
+  color: purple;
 }
