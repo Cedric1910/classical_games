@@ -15,11 +15,24 @@ export const StyledTetris = styled.div`
   align-items: flex-start;
   padding: 40px;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1200px;
   aside {
     width: 100%;
     max-width: 200px;
     display: block;
     padding: 0 20px;
+  }
+  .instructions {
+    width: 100%;
+    max-width: 400x;
+    height: 100%;
+    color: #999;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    border: 4px solid #333;
+    min-height: 30px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: black;
   }
 `;

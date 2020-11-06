@@ -117,6 +117,25 @@ function Tetris(props) {
               )}
               <StartButton callback={startGame}></StartButton>
             </aside>
+            <div className="instructions">
+              <h2>Welcome to Tetris!</h2>
+              <h3>Instructions:</h3>
+              <p>
+                To start the game simply press the "Start Game" button. The aim
+                of the game is to line up falling blocks which fit together into
+                a full vertical row. When a perfect line is created the blocks
+                will vanish and the blocks above will be moved down one line.
+                Each line which is cleared will provide you with a number of
+                points, you can clear multiple lines which in return will
+                provide an added number of points.
+                <br />
+                <p>
+                  You can move by using your computer arrows and pressing left
+                  right or down. To rotate the shape press the up arrow.
+                  Pressing enter will reset your current game.
+                </p>
+              </p>
+            </div>
           </StyledTetris>
         </StyledTetrisWrapper>
       </div>
