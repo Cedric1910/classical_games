@@ -20,3 +20,5 @@ You will also see any lint errors in the console.
 
 - currently score in Tetris sometimes changes to 'NaN' when a new row is completed. Trying to find out why this is. (fixed)
 - display isn't very flexible when moving brownser dimensions as I havent got round to doing it.
+- very rarely a TypeError will occur when creating a new stage based on the player pos in the higher levels. I believe this
+  is due to the indices not being officially created yet even though they should be with the original createStage method.
