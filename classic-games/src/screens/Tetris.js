@@ -40,13 +40,15 @@ function Tetris(props) {
     setGameover(false);
     setScore(0);
     setRows(0);
-    setLevel(0);
+    setLevel(1);
   };
 
   //updates the current tetris object in play to drop by 1 tile/square each time while the collision is false
   const drop = () => {
     //increases level when the player clears 10 rows.
-    if (rows > (level + 1) * 10) {
+    console.log("here");
+    if (rows > level * 10) {
+      console.log("here2");
       setLevel((prev) => prev + 1);
       setDroptime(1000 / (level + 1) + 200);
     }
