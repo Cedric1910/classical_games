@@ -18,4 +18,5 @@ You will also see any lint errors in the console.
 
 ### Bugs I am aware of currently:
 
-- currently score in Tetris sometimes changes to 'NaN' when a new row is completed. Trying to find out why this is.
+- currently score in Tetris sometimes changes to 'NaN' when a new row is completed. Trying to find out why this is. (fixed)
+- display isn't very flexible when moving brownser dimensions as I havent got round to doing it.
