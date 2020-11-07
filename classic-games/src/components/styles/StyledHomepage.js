@@ -7,7 +7,6 @@ export const StyledHomepageLayout = styled.div`
   min-height: 43rem;
   border: solid 1px red;
   color: white;
-  text-align: center;
 
   a:link,
   a:visited {
@@ -21,6 +20,8 @@ export const StyledHeader = styled.div`
   width: 100%;
   height: 5rem;
   border: 1px blue solid;
+  text-align: center;
+  padding-top: 10px;
 `;
 
 export const StyledBody = styled.div`
@@ -31,8 +32,11 @@ export const StyledBody = styled.div`
 
 export const StyledFooter = styled.div`
   width: 100%;
-  height: 3rem;
+  height: 2rem;
+  padding-top: 0.5rem;
   border: 1px orange solid;
+  text-align: center;
+  font-size: 12px;
 `;
 
 export const StyledHomepageMenu = styled.div`

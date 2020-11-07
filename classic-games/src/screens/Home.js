@@ -12,9 +12,19 @@ function Home(props) {
   return (
     <div className="home-bg">
       <StyledHomepageLayout>
-        <StyledHeader> HEADER</StyledHeader>
+        <StyledHeader>
+          {" "}
+          <h1>Cedric's Arcade</h1>
+        </StyledHeader>
         <StyledBody> BODY</StyledBody>
-        <StyledFooter> FOOTER</StyledFooter>
+        <StyledFooter>
+          {" "}
+          <p>
+            {" "}
+            All rights reserved. | Created and designed by Cedric Stephani |
+            V1.0.0
+          </p>
+        </StyledFooter>
       </StyledHomepageLayout>
     </div>
   );
