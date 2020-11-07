@@ -19,3 +19,11 @@ body {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.tetris_div:hover {
+  background-image: url("./img/tetris_btn_img.png");
+  opacity: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: hidden;
+}

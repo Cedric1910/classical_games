@@ -21,6 +21,7 @@ function Home(props) {
         </StyledHeader>
         <StyledBody>
           <div
+            className="tetris_div"
             onClick={(e) => {
               e.preventDefault();
               window.location.href = "games/tetris";
