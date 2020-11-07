@@ -15,9 +15,21 @@ export const StyledHomepageLayout = styled.div`
   }
   display: flex;
   flex-direction: column;
-  div {
-    border: 1px solid green;
-  }
+`;
+
+export const StyledHeader = styled.div`
+  width: 100%;
+  border: 1px blue solid;
+`;
+
+export const StyledBody = styled.div`
+  width: 100%;
+  border: 1px blue solid;
+`;
+
+export const StyledFooter = styled.div`
+  width: 100%;
+  border: 1px blue solid;
 `;
 
 export const StyledHomepageMenu = styled.div`

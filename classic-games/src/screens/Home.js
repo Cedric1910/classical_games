@@ -3,15 +3,18 @@ import "../index.css";
 import {
   StyledHomepageLayout,
   StyledHomepageMenu,
+  StyledHeader,
+  StyledBody,
+  StyledFooter,
 } from "../components/styles/StyledHomepage";
 
 function Home(props) {
   return (
     <div className="home-bg">
       <StyledHomepageLayout>
-        <div> HEADER</div>
-        <div> BODY</div>
-        <div> FOOTER</div>
+        <StyledHeader> HEADER</StyledHeader>
+        <StyledBody> BODY</StyledBody>
+        <StyledFooter> FOOTER</StyledFooter>
       </StyledHomepageLayout>
     </div>
   );
