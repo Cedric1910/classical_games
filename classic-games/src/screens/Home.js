@@ -1,14 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../index.css";
 import {
   StyledHomepageLayout,
   StyledHeader,
   StyledBody,
   StyledFooter,
-  GameButton,
 } from "../components/styles/StyledHomepage";
-import tetris_btn_img from "../img/tetris_btn_img.png";
+import { SocialIcon } from "react-social-icons";
 
 function Home(props) {
   //console.log(logo);
@@ -35,7 +33,16 @@ function Home(props) {
           <p>
             {" "}
             All rights reserved. | Created and designed by Cedric Stephani |
-            V1.0.0
+            V1.0.0 | &nbsp;
+            <SocialIcon
+              url="https://github.com/Cedric1910"
+              style={{ height: 25, width: 25 }}
+            />
+            &nbsp;
+            <SocialIcon
+              url="https://www.linkedin.com/in/cedric-stephani-1500261bb/"
+              style={{ height: 25, width: 25 }}
+            />
           </p>
         </StyledFooter>
       </StyledHomepageLayout>
