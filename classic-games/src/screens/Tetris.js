@@ -137,6 +137,11 @@ function Tetris(props) {
                   right or down. To rotate the shape press the up arrow.
                   Pressing enter will reset your current game.
                 </p>
+                <br />
+                <p>
+                  If you wish to play other games you can go back to the{" "}
+                  <a href="/homepage">homepage</a>.
+                </p>
               </p>
             </div>
           </StyledTetris>
