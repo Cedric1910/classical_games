@@ -58,9 +58,18 @@ export const TETROMINOS = {
   },
 };
 
+//This is the method for creating a random order of tetris shapes in the tetris game
 export const randomTetromino = () => {
   const tetrominos = "IJLOSTZ";
   const randTetromino =
     tetrominos[Math.floor(Math.random() * tetrominos.length)];
   return TETROMINOS[randTetromino];
+};
+
+//this is a method I created for testing the game with just the IO shapes to get up in the higher levels quickly.
+export const testingTetromino = () => {
+  const testingTetrominos = "IO";
+  const randTestingTetromino =
+    testingTetrominos[Math.floor(Math.random() * tetrominos.length)];
+  return TETROMINOS[randTestingTetromino];
 };
