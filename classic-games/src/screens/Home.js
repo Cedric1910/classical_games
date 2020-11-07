@@ -18,7 +18,13 @@ function Home(props) {
         </StyledHeader>
         <StyledBody>
           <button onClick={() => props.history.push("/games/tetris")}>
-            Link
+            Tetris
+          </button>
+          <button onClick={() => props.history.push("/games/tetris")}>
+            Game 2
+          </button>
+          <button onClick={() => props.history.push("/games/tetris")}>
+            Game 3
           </button>
         </StyledBody>
         <StyledFooter>
