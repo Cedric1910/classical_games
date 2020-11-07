@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Cell from "../components/Cell";
 import Display from "../components/Display";
 import StartButton from "../components/Start_button";
@@ -22,6 +22,10 @@ function Tetris(props) {
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(
     rowsCleared
   );
+
+  useEffect(() => {
+    document.title = "Tetris";
+  }, []);
 
   //console.log("re-render");
   //console.log("gameover: ", gameover);

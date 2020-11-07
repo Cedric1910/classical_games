@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import "../index.css";
 import {
   StyledHomepageLayout,
@@ -9,6 +9,9 @@ import {
 import { SocialIcon } from "react-social-icons";
 
 function Home(props) {
+  useEffect(() => {
+    document.title = "Homepage";
+  }, []);
   //console.log(logo);
   return (
     <div className="home-bg">
@@ -33,7 +36,7 @@ function Home(props) {
           <p>
             {" "}
             All rights reserved. | Created and designed by Cedric Stephani |
-            V1.0.0 | &nbsp;
+            V1.1.0 | &nbsp;
             <SocialIcon
               url="https://github.com/Cedric1910"
               style={{ height: 25, width: 25 }}
