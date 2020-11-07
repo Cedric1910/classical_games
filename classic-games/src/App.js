@@ -12,7 +12,6 @@ function App() {
         <Route path="/games/tetris" component={Tetris} />
         <Route path="/homepage" component={Home} />
       </div>
-      <div className="footer">V1.0.0</div>
     </BrowserRouter>
   );
 }

@@ -1,28 +1,51 @@
 import React from "react";
 import "../index.css";
+import {
+  StyledHomepageLayout,
+  StyledHeader,
+  StyledBody,
+  StyledFooter,
+} from "../components/styles/StyledHomepage";
+import { SocialIcon } from "react-social-icons";
 
 function Home(props) {
+  //console.log(logo);
   return (
     <div className="home-bg">
-      <div className="main-styling">
-        <h1>Cedric's old school arcade.</h1>
-        <h3>
-          This is just a fun solo project im doing in my spare time with some of
-          my favourite simple games<br></br>
-          from back in the day. If you have any idea which one I should
-          implement next let me know!
-        </h3>
-        <p>
-          Current Games: <br></br>
-          <a href="./games/tetris">Tetris</a>. <br></br>
-          <br></br>
-          Yes this homepage looks very unfinished. As you can see down the
-          bottom right hand corner we are in the early versions of this<br></br>
-          application. In version 2 I will be re-designing the Homepage to give
-          it a more modern and responsive look, but first I wanted to get at
-          least 1 game working.
-        </p>
-      </div>
+      <StyledHomepageLayout>
+        <StyledHeader>
+          {" "}
+          <h1>Cedric's Old School Arcade</h1>
+        </StyledHeader>
+        <StyledBody>
+          <div
+            className="tetris_div"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = "games/tetris";
+            }}
+          >
+            <h1>Tetris</h1>
+          </div>
+        </StyledBody>
+        <StyledFooter>
+          {" "}
+          <p>
+            {" "}
+            All rights reserved. | Created and designed by Cedric Stephani |
+            V1.0.0 | &nbsp;
+            <SocialIcon
+              url="https://github.com/Cedric1910"
+              style={{ height: 25, width: 25 }}
+            />
+            &nbsp;
+            <SocialIcon
+              url="https://www.linkedin.com/in/cedric-stephani-1500261bb/"
+              style={{ height: 25, width: 25 }}
+            />
+          </p>
+        </StyledFooter>
+      </StyledHomepageLayout>
     </div>
   );
 }

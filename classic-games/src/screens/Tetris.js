@@ -114,7 +114,7 @@ function Tetris(props) {
               ) : (
                 <div id="tetris-displays">
                   <Display text={`Score: ${score}`}></Display>
-                  <Display text={`Rows Completed: ${rows}`}></Display>
+                  <Display text={`Rows: ${rows}`}></Display>
                   <Display text={`Level: ${level + 1}`}></Display>
                 </div>
               )}
@@ -136,6 +136,11 @@ function Tetris(props) {
                   You can move by using your computer arrows and pressing left
                   right or down. To rotate the shape press the up arrow.
                   Pressing enter will reset your current game.
+                </p>
+                <br />
+                <p>
+                  If you wish to play other games you can go back to the{" "}
+                  <a href="/homepage">homepage</a>.
                 </p>
               </p>
             </div>

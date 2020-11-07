@@ -2,6 +2,11 @@
   * this has been done to make it easier on myself when going back to look at where im styling objects. 
   */
 
+@font-face {
+  font-family: "Pixel-LCD-7";
+  src: url("../src/font/Pixel-LCD-7.woff");
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -15,25 +20,24 @@ body {
   overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body,
+h2 {
+  font-family: "Pixel-LCD-7";
+  letter-spacing: 2px;
 }
 
-.main-styling {
-  width: 100%;
-  color: white;
-  text-align: center;
+a {
+  color: #e60000;
 }
 
-a:link,
-a:visited {
-  color: red;
+.tetris_div:hover {
+  background-image: url("./img/tetris_btn_img.png");
+  opacity: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: hidden;
 }
 
-.footer {
-  height: 2rem;
-  font-size: 10px;
-  text-align: right;
-  color: purple;
+.instructions {
+  font-family: "Helvetica Neue";
 }
