@@ -34,12 +34,14 @@ export const StyledBody = styled.div`
     margin: auto;
     height: 10%;
     width: 25%;
-    border: 2px solid red;
     text-align: center; 
+    box-shadow: 5px 5px 10px;
 
     :hover{
         height: 90%; 
-    }
+        transition-duration: 1s;
+        background: url("../img/tetris_btn_img.png"); 
+        }
     }
   }
 `;

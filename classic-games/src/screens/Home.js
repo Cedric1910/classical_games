@@ -26,7 +26,7 @@ function Home(props) {
               window.location.href = "games/tetris";
             }}
           >
-            Tetris
+            <h1>Tetris</h1>
           </div>
         </StyledBody>
         <StyledFooter>
