@@ -1,10 +1,11 @@
 import React from "react";
 import "../index.css";
+import { StyledMainDisplay } from "../components/styles/StyledHomepage";
 
 function Home(props) {
   return (
     <div className="home-bg">
-      <div className="main-styling">
+      <StyledMainDisplay>
         <h1>Cedric's old school arcade.</h1>
         <h3>
           This is just a fun solo project im doing in my spare time with some of
@@ -22,7 +23,7 @@ function Home(props) {
           it a more modern and responsive look, but first I wanted to get at
           least 1 game working.
         </p>
-      </div>
+      </StyledMainDisplay>
     </div>
   );
 }

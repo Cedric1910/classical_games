@@ -19,21 +19,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.main-styling {
-  width: 100%;
-  color: white;
-  text-align: center;
-}
-
-a:link,
-a:visited {
-  color: red;
-}
-
-.footer {
-  height: 2rem;
-  font-size: 10px;
-  text-align: right;
-  color: purple;
-}
