@@ -19,17 +19,20 @@ export const StyledHomepageLayout = styled.div`
 
 export const StyledHeader = styled.div`
   width: 100%;
+  height: 5rem;
   border: 1px blue solid;
 `;
 
 export const StyledBody = styled.div`
   width: 100%;
-  border: 1px blue solid;
+  height: 35rem;
+  border: 1px green solid;
 `;
 
 export const StyledFooter = styled.div`
   width: 100%;
-  border: 1px blue solid;
+  height: 3rem;
+  border: 1px orange solid;
 `;
 
 export const StyledHomepageMenu = styled.div`
