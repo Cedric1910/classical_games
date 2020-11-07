@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../index.css";
 import {
   StyledHomepageLayout,
-  StyledHomepageMenu,
   StyledHeader,
   StyledBody,
   StyledFooter,
@@ -16,7 +16,11 @@ function Home(props) {
           {" "}
           <h1>Cedric's Arcade</h1>
         </StyledHeader>
-        <StyledBody> BODY</StyledBody>
+        <StyledBody>
+          <button onClick={() => props.history.push("/games/tetris")}>
+            Link
+          </button>
+        </StyledBody>
         <StyledFooter>
           {" "}
           <p>

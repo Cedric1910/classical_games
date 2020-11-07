@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import background_img from "../../img/home_background.png";
 
 export const StyledHomepageLayout = styled.div`
   width: 100%;
@@ -24,12 +23,6 @@ export const StyledHeader = styled.div`
   padding-top: 10px;
 `;
 
-export const StyledBody = styled.div`
-  width: 100%;
-  height: 35rem;
-  border: 1px green solid;
-`;
-
 export const StyledFooter = styled.div`
   width: 100%;
   height: 2rem;
@@ -39,6 +32,10 @@ export const StyledFooter = styled.div`
   font-size: 12px;
 `;
 
-export const StyledHomepageMenu = styled.div`
+export const StyledBody = styled.div`
   width: 100%;
+  height: 35rem;
+  border: 1px green solid;
+  display: flex;
+  justify-content: center;
 `;
