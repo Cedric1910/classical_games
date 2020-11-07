@@ -20,7 +20,14 @@ function Home(props) {
           <h1>Cedric's Old School Arcade</h1>
         </StyledHeader>
         <StyledBody>
-          <div onClick={(e) => console.log("Clicked")}>Tetris</div>
+          <div
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = "games/tetris";
+            }}
+          >
+            Tetris
+          </div>
         </StyledBody>
         <StyledFooter>
           {" "}
