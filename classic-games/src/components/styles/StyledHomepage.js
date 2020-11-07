@@ -50,6 +50,7 @@ export const StyledFooter = styled.div`
   padding-top: 0.5rem;
   text-align: center;
   font-size: 12px;
+  font-family: "Helvetica Neue";
 `;
 
 export const GameButton = styled.div`
