@@ -20,7 +20,8 @@ body {
   overflow: hidden;
 }
 
-body {
+body,
+h2 {
   font-family: "Pixel-LCD-7";
   letter-spacing: 2px;
 }
@@ -31,4 +32,8 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   overflow: hidden;
+}
+
+.instructions {
+  font-family: "Helvetica Neue";
 }

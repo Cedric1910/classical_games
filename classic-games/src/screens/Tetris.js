@@ -114,7 +114,7 @@ function Tetris(props) {
               ) : (
                 <div id="tetris-displays">
                   <Display text={`Score: ${score}`}></Display>
-                  <Display text={`Rows Completed: ${rows}`}></Display>
+                  <Display text={`Rows: ${rows}`}></Display>
                   <Display text={`Level: ${level + 1}`}></Display>
                 </div>
               )}
