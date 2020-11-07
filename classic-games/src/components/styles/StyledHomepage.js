@@ -23,6 +23,24 @@ export const StyledHeader = styled.div`
   padding-top: 10px;
 `;
 
+export const StyledBody = styled.div`
+  width: 100%;
+  height: 35rem;
+  border: 1px green solid;
+  display: flex;
+  justify-content: center;
+
+  button {
+    margin: auto;
+    height: 10%;
+    width: 20%;
+
+    :hover {
+      height: 70%;
+    }
+  }
+`;
+
 export const StyledFooter = styled.div`
   width: 100%;
   height: 2rem;
@@ -30,12 +48,4 @@ export const StyledFooter = styled.div`
   border: 1px orange solid;
   text-align: center;
   font-size: 12px;
-`;
-
-export const StyledBody = styled.div`
-  width: 100%;
-  height: 35rem;
-  border: 1px green solid;
-  display: flex;
-  justify-content: center;
 `;
