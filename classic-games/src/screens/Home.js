@@ -6,8 +6,9 @@ import {
   StyledHeader,
   StyledBody,
   StyledFooter,
+  GameButton,
 } from "../components/styles/StyledHomepage";
-import tetris_btn_img from "../img/tetris_btn_img.jpg";
+import tetris_btn_img from "../img/tetris_btn_img.png";
 
 function Home(props) {
   //console.log(logo);
@@ -19,15 +20,7 @@ function Home(props) {
           <h1>Cedric's Old School Arcade</h1>
         </StyledHeader>
         <StyledBody>
-          <button onClick={() => props.history.push("/games/tetris")}>
-            <img src={tetris_btn_img} alt="Tetris"></img>
-          </button>
-          <button onClick={() => props.history.push("/games/tetris")}>
-            Game 2
-          </button>
-          <button onClick={() => props.history.push("/games/tetris")}>
-            Game 3
-          </button>
+          <div onClick={(e) => console.log("Clicked")}>Tetris</div>
         </StyledBody>
         <StyledFooter>
           {" "}

@@ -30,19 +30,16 @@ export const StyledBody = styled.div`
   display: flex;
   justify-content: center;
 
-  button {
+  div {
     margin: auto;
     height: 10%;
     width: 25%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    display: block;
-    transition: all 0.25s ease;
+    border: 2px solid red;
+    text-align: center; 
 
-    :hover {
-      height: 90%;
-      -webkit-transform: scale(1);
+    :hover{
+        height: 90%; 
+    }
     }
   }
 `;
@@ -54,4 +51,10 @@ export const StyledFooter = styled.div`
   border: 1px orange solid;
   text-align: center;
   font-size: 12px;
+`;
+
+export const GameButton = styled.div`
+  margin: auto;
+  height: 10%;
+  width: 25%;
 `;
