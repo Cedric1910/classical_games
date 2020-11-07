@@ -25,6 +25,7 @@ function Tetris(props) {
 
   useEffect(() => {
     document.title = "Tetris";
+    document.image = "../img/smile.svg";
   }, []);
 
   //console.log("re-render");
