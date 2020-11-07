@@ -33,10 +33,16 @@ export const StyledBody = styled.div`
   button {
     margin: auto;
     height: 10%;
-    width: 20%;
+    width: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: block;
+    transition: all 0.25s ease;
 
     :hover {
-      height: 70%;
+      height: 90%;
+      -webkit-transform: scale(1);
     }
   }
 `;

@@ -19,3 +19,7 @@ body {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.tetris_btn_img {
+  background-image: url("./img/tetris_btn_img.jpg");
+}
