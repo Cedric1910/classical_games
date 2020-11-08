@@ -58,7 +58,19 @@ function Snake(props) {
     return false;
   };
 
-  const checkAppleCollision = (newSnakeHead) => {};
+  //checks to see if the current snake heads new move has collided with the apple object of the game.
+  const checkAppleCollision = (newSnake) => {
+    if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
+      let newApple = createApple(); //create a new apple
+      while (checkCollision(newApple, newSnake)) {
+        //checks to see if the new apple object is within the current snale
+        newApple = createApple();
+      }
+      setApple(newApple);
+      return true;
+    }
+    return false;
+  };
 
   const gameLoop = () => {
     const snakeCopy = JSON.parse(JSON.stringify(snake));
