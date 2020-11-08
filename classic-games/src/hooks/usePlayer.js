@@ -52,8 +52,8 @@ export const usePlayer = () => {
     setPlayer({
       pos: { x: STAGE_WIDTH / 2, y: 0 },
       // You can uncomment these two depending on wether you want to play the normal game or bug testing version.
-      //tetromino: randomTetromino().shape,
-      tetromino: testingTetromino().shape,
+      tetromino: randomTetromino().shape,
+      //tetromino: testingTetromino().shape,
       collided: false,
     });
   }, []);
