@@ -20,30 +20,35 @@ export const useStage = (player, resetPlayer) => {
       }, []);
 
     const updateStage = (prevStage) => {
-      // First flush the stage
-      const newStage = prevStage.map((row) =>
-        row.map((cell) => (cell[1] === "clear" ? [0, "clear"] : cell))
-      );
+      try {
+        // First flush the stage
+        const newStage = prevStage.map((row) =>
+          row.map((cell) => (cell[1] === "clear" ? [0, "clear"] : cell))
+        );
 
-      // Then draw the tetromino
-      player.tetromino.forEach((row, y) => {
-        row.forEach((value, x) => {
-          if (value !== 0) {
-            //console.log("here");
-            newStage[y + player.pos.y][x + player.pos.x] = [
-              value,
-              `${player.collided ? "merged" : "clear"}`,
-            ];
-          }
+        // Then draw the tetromino
+        player.tetromino.forEach((row, y) => {
+          row.forEach((value, x) => {
+            if (value !== 0) {
+              //console.log("here");
+              newStage[y + player.pos.y][x + player.pos.x] = [
+                value,
+                `${player.collided ? "merged" : "clear"}`,
+              ];
+            }
+          });
         });
-      });
-      // Then check if we collided
-      if (player.collided) {
-        resetPlayer();
-        return sweepRows(newStage);
-      }
+        // Then check if we collided
+        if (player.collided) {
+          resetPlayer();
+          return sweepRows(newStage);
+        }
 
-      return newStage;
+        return newStage;
+      } catch (e) {
+        window.alert("Sorry but a bug has occured the game will be restarted!");
+        window.location.reload();
+      }
     };
 
     setStage((prev) => updateStage(prev));
