@@ -67,6 +67,8 @@ function Snake(props) {
           width={`${SNAKE_STAGE[0]}px`}
           height={`${SNAKE_STAGE[1]}px`}
         />
+        {gameOver && <div>GAME OVER!</div>}
+        <button onClick={startGame}>Start Game</button>
       </StyledSnake>
     </StyledSnakeWrapper>
   );
