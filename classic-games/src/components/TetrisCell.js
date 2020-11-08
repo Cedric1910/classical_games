@@ -2,8 +2,8 @@ import React from "react";
 import { StyledCell } from "./styles/StyledTetris";
 import { TETROMINOS } from "../tetronomis";
 
-const Cell = ({ type }) => (
+const TetrisCell = ({ type }) => (
   <StyledCell type={type} color={TETROMINOS[type].color}></StyledCell>
 );
 
-export default Cell;
+export default TetrisCell;

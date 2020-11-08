@@ -1,6 +1,6 @@
 import React from "react";
-import Cell from "./Cell";
-import { StyledStage } from "../components/styles/StyledTetris";
+import Cell from "./TetrisCell";
+import { StyledStage } from "./styles/StyledTetris";
 
 const Stage = ({ stage }) => (
   <StyledStage width={stage[0].length} height={stage.length}>

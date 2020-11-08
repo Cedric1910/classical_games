@@ -38,7 +38,7 @@ function Home(props) {
               window.location.href = "games/snake";
             }}
           >
-            <h1>Snake</h1>
+            <h1>snake</h1>
           </div>
         </StyledBody>
         <StyledFooter>

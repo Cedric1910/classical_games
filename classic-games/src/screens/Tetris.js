@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import Cell from "../components/Cell";
-import Display from "../components/Display";
+import Cell from "../components/TetrisCell";
+import Display from "../components/TetrisDisplay";
 import StartButton from "../components/Start_button";
-import Stage from "../components/Stage";
+import Stage from "../components/TetrisStage";
 import "../index.css";
 import {
   StyledTetris,
