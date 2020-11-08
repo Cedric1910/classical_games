@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { randomTetromino, TETROMINOS } from "../tetronomis";
+import { randomTetromino, testingTetromino, TETROMINOS } from "../tetronomis";
 import { STAGE_WIDTH, checkCollision } from "../gameHelpers";
 
 export const usePlayer = () => {
@@ -51,7 +51,9 @@ export const usePlayer = () => {
   const resetPlayer = useCallback(() => {
     setPlayer({
       pos: { x: STAGE_WIDTH / 2, y: 0 },
-      tetromino: randomTetromino().shape,
+      // You can uncomment these two depending on wether you want to play the normal game or bug testing version.
+      //tetromino: randomTetromino().shape,
+      tetromino: testingTetromino().shape,
       collided: false,
     });
   }, []);

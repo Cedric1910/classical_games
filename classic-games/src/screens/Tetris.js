@@ -54,7 +54,7 @@ function Tetris(props) {
     if (rows > (level + 1) * 10) {
       setLevel((prev) => prev + 1);
       // Also increase speed
-      setDroptime(1000 / (level + 1) + 200);
+      setDroptime(100 / (level + 1) + 400);
     }
 
     if (!checkCollision(player, stage, { x: 0, y: 1 })) {
@@ -73,7 +73,7 @@ function Tetris(props) {
   const keyUp = ({ keyCode }) => {
     if (!gameover) {
       if (keyCode === 40) {
-        setDroptime(1000 / (level + 1) + 200);
+        setDroptime(100 / (level + 1) + 400);
       }
     }
   };
