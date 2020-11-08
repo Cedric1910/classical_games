@@ -25,12 +25,23 @@ function Snake(props) {
   const [speed, setSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
-  const startGame = () => {};
+  useInterval(() => gameLoop(), speed);
 
-  const endGame = () => {};
+  const startGame = () => {
+    setSnake(SNAKE_START);
+    setApple(APPLE_START);
+    setDir([0, -1]);
+    setSpeed(SPEED);
+    setGameOver(false);
+  };
+
+  const endGame = () => {
+    setSpeed(null);
+    setGameOver(true);
+  };
 
   const createApple = () => {
-    apple.map((_a, i) => Math.floor(Math.random() * (CANVAS_SIZE[i] / SCALE)));
+    apple.map((_a, i) => Math.floor(Math.random() * (SNAKE_STAGE[i] / SCALE)));
   };
 
   const moveSnake = ({ keyCode }) => {
@@ -41,19 +52,17 @@ function Snake(props) {
   const checkCollision = (piece, snk = snake) => {
     // check to see if a collision has occured with the border
     if (
-      piece[0] * SCALE >= CANVAS_SIZE[0] ||
-      piece[1] * SCALE >= CANVAS_SIZE[1] ||
+      piece[0] * SCALE >= SNAKE_STAGE[0] ||
+      piece[1] * SCALE >= SNAKE_STAGE[1] ||
       piece[0] >= 0 ||
       piece[1] <= 0
     ) {
       return true;
     }
-
     //check to see if a collision has occured with another part of the snake
     for (const segment of snk) {
       if (piece[0] === segment[0] && piece[1] === segment[1]) return true;
     }
-
     //no collisions have occured and we can continue with the game.
     return false;
   };
@@ -81,8 +90,6 @@ function Snake(props) {
     setSnake(snakeCopy);
   };
 
-  useInterval(() => gameLoop(), speed);
-
   useEffect(() => {
     const context = stage_canvas.current.getContext("2d"); //get the stage canvas context
     context.setTransform(SCALE, 0, 0, SCALE, 0, 0); //transform the stage into the SCALE imported from the constants file
@@ -91,7 +98,7 @@ function Snake(props) {
     snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1)); //fill the snake dot and its trialing tail with the color
     context.fillStyle = "green"; //make the food green
     context.fillRect(apple[0], apple[1], 1, 1); //actually fill the rectangle which is the 'food'.
-  });
+  }, [snake, apple, gameOver]);
   return (
     <StyledSnakeWrapper>
       <StyledSnake>
@@ -102,14 +109,15 @@ function Snake(props) {
             <a href="/homepage">homepage</a>.
           </p>
         </div>
-
-        <canvas
-          ref={stage_canvas}
-          width={`${SNAKE_STAGE[0]}px`}
-          height={`${SNAKE_STAGE[1]}px`}
-        />
-        {gameOver && <div>GAME OVER!</div>}
-        <button onClick={startGame}>Start Game</button>
+        <div role="button" tabIndex="0" onKeyDown={(e) => moveSnake(e)}>
+          <canvas
+            ref={stage_canvas}
+            width={`${SNAKE_STAGE[0]}px`}
+            height={`${SNAKE_STAGE[1]}px`}
+          />
+          {gameOver && <div>GAME OVER!</div>}
+          <button onClick={startGame}>Start Game</button>
+        </div>
       </StyledSnake>
     </StyledSnakeWrapper>
   );
