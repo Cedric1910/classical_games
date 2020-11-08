@@ -29,9 +29,36 @@ function Snake(props) {
 
   const endGame = () => {};
 
+  const createApple = () => {
+    apple.map((_a, i) => Math.floor(Math.random() * (CANVAS_SIZE[i] / SCALE)));
+  };
+
   const moveSnake = ({ keyCode }) => {
     keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
   };
+
+  //collision method to see if the snake has collided with any of the stage borders or another part of itself
+  const checkCollision = (piece, snk = snake) => {
+    // check to see if a collision has occured with the border
+    if (
+      piece[0] * SCALE >= CANVAS_SIZE[0] ||
+      piece[1] * SCALE >= CANVAS_SIZE[1] ||
+      piece[0] >= 0 ||
+      piece[1] <= 0
+    ) {
+      return true;
+    }
+
+    //check to see if a collision has occured with another part of the snake
+    for (const segment of snk) {
+      if (piece[0] === segment[0] && piece[1] === segment[1]) return true;
+    }
+
+    //no collisions have occured and we can continue with the game.
+    return false;
+  };
+
+  const checkAppleCollision = (newSnakeHead) => {};
 
   const gameLoop = () => {
     const snakeCopy = JSON.parse(JSON.stringify(snake));
@@ -41,6 +68,8 @@ function Snake(props) {
     if (!checkAppleCollision(snakeCopy)) snakeCopy.pop();
     setSnake(snakeCopy);
   };
+
+  useInterval(() => gameLoop(), speed);
 
   useEffect(() => {
     const context = stage_canvas.current.getContext("2d"); //get the stage canvas context
