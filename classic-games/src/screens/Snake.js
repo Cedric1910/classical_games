@@ -54,8 +54,8 @@ function Snake(props) {
     if (
       piece[0] * SCALE >= SNAKE_STAGE[0] ||
       piece[1] * SCALE >= SNAKE_STAGE[1] ||
-      piece[0] >= 0 ||
-      piece[1] <= 0
+      piece[0] < 0 ||
+      piece[1] < 0
     ) {
       return true;
     }
