@@ -19,6 +19,15 @@ import {
  */
 function Snake(props) {
   const stage_canvas = useRef();
+
+  const startGame = () => {};
+
+  const endGame = () => {};
+
+  const moveSnake = () => {
+    keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
+  };
+
   useEffect(() => {
     //get the stage canvas context
     const context = stage_canvas.current.getContext("2d");
