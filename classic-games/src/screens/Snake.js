@@ -33,6 +33,15 @@ function Snake(props) {
     keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
   };
 
+  const gameLoop = () => {
+    const snakeCopy = JSON.parse(JSON.stringify(snake));
+    const newSnakeHead = [snakeCopy[0][0] + dir[0], snakeCopy[0][1] + dir[1]];
+    snakeCopy.unshift(newSnakeHead);
+    if (checkCollision(newSnakeHead)) endGame();
+    if (!checkAppleCollision(snakeCopy)) snakeCopy.pop();
+    setSnake(snakeCopy);
+  };
+
   useEffect(() => {
     const context = stage_canvas.current.getContext("2d"); //get the stage canvas context
     context.setTransform(SCALE, 0, 0, SCALE, 0, 0); //transform the stage into the SCALE imported from the constants file
