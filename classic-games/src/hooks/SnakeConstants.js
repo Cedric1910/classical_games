@@ -5,7 +5,7 @@ const SNAKE_START = [
   [15, 15],
 ];
 
-const APPLE_START = [1, 3]; //sets where the first apple will be, later will make a randomiser function for the start
+const APPLE_START = [15, 5]; //sets where the first apple will be, later will make a randomiser function for the start
 
 const SCALE = 20;
 const SPEED = 75; //Move 1 block per second

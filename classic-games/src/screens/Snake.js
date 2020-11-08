@@ -40,9 +40,8 @@ function Snake(props) {
     setGameOver(true);
   };
 
-  const createApple = () => {
+  const createApple = () =>
     apple.map((_a, i) => Math.floor(Math.random() * (SNAKE_STAGE[i] / SCALE)));
-  };
 
   const moveSnake = ({ keyCode }) => {
     keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
@@ -70,9 +69,9 @@ function Snake(props) {
   //checks to see if the current snake heads new move has collided with the apple object of the game.
   const checkAppleCollision = (newSnake) => {
     if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
-      let newApple = createApple(); //create a new apple
+      //window.alert("inside the check apple if loop");
+      let newApple = createApple();
       while (checkCollision(newApple, newSnake)) {
-        //checks to see if the new apple object is within the current snale
         newApple = createApple();
       }
       setApple(newApple);
@@ -83,22 +82,26 @@ function Snake(props) {
 
   const gameLoop = () => {
     const snakeCopy = JSON.parse(JSON.stringify(snake));
+    //console.log(snakeCopy);
     const newSnakeHead = [snakeCopy[0][0] + dir[0], snakeCopy[0][1] + dir[1]];
+    //console.log(newSnakeHead);
     snakeCopy.unshift(newSnakeHead);
     if (checkCollision(newSnakeHead)) endGame();
     if (!checkAppleCollision(snakeCopy)) snakeCopy.pop();
+    //snakeCopy.pop();
     setSnake(snakeCopy);
   };
 
   useEffect(() => {
-    const context = stage_canvas.current.getContext("2d"); //get the stage canvas context
-    context.setTransform(SCALE, 0, 0, SCALE, 0, 0); //transform the stage into the SCALE imported from the constants file
-    context.clearRect(0, 0, window.innerHeight, window.innerWidth); //clear the rectangle
-    context.fillStyle = "red"; //make the snake red
-    snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1)); //fill the snake dot and its trialing tail with the color
-    context.fillStyle = "green"; //make the food green
-    context.fillRect(apple[0], apple[1], 1, 1); //actually fill the rectangle which is the 'food'.
+    const context = stage_canvas.current.getContext("2d");
+    context.setTransform(SCALE, 0, 0, SCALE, 0, 0);
+    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    context.fillStyle = "red";
+    snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
+    context.fillStyle = "green";
+    context.fillRect(apple[0], apple[1], 1, 1);
   }, [snake, apple, gameOver]);
+
   return (
     <StyledSnakeWrapper>
       <StyledSnake>
