@@ -30,6 +30,16 @@ function Home(props) {
           >
             <h1>Tetris</h1>
           </div>
+
+          <div
+            className="snake_div"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = "games/snake";
+            }}
+          >
+            <h1>Snake</h1>
+          </div>
         </StyledBody>
         <StyledFooter>
           {" "}
