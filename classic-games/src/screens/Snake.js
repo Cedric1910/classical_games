@@ -19,20 +19,28 @@ import {
  */
 function Snake(props) {
   const stage_canvas = useRef();
+  const [dir, setDir] = useState([0, -1]);
+  const [snake, setSnake] = useState(SNAKE_START);
+  const [apple, setApple] = useState(APPLE_START);
+  const [speed, setSpeed] = useState(null);
+  const [gameOver, setGameOver] = useState(false);
 
   const startGame = () => {};
 
   const endGame = () => {};
 
-  const moveSnake = () => {
+  const moveSnake = ({ keyCode }) => {
     keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
   };
 
   useEffect(() => {
-    //get the stage canvas context
-    const context = stage_canvas.current.getContext("2d");
-    //transform the stage into the SCALE imported from the constants file
-    context.setTransform(SCALE, 0, 0, SCALE, 0, 0);
+    const context = stage_canvas.current.getContext("2d"); //get the stage canvas context
+    context.setTransform(SCALE, 0, 0, SCALE, 0, 0); //transform the stage into the SCALE imported from the constants file
+    context.clearRect(0, 0, window.innerHeight, window.innerWidth); //clear the rectangle
+    context.fillStyle = "red"; //make the snake red
+    snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1)); //fill the snake dot and its trialing tail with the color
+    context.fillStyle = "green"; //make the food green
+    context.fillRect(apple[0], apple[1], 1, 1); //actually fill the rectangle which is the 'food'.
   });
   return (
     <StyledSnakeWrapper>
