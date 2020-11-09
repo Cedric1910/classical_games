@@ -28,6 +28,7 @@ function Snake(props) {
   const [speed, setSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
+  const [total_eaten, setTotal_eaten] = useState(0);
 
   useInterval(() => gameLoop(), speed);
 
@@ -123,14 +124,47 @@ function Snake(props) {
             width={`${SNAKE_STAGE[0]}px`}
             height={`${SNAKE_STAGE[1]}px`}
           />
-          {gameOver && <div>GAME OVER!</div>}
         </div>
         <aside>
-          <div id="snake-displays">
-            <Display text={`Score: ${score}`}></Display>
-            <StartButton callback={startGame}>Start Game</StartButton>
-          </div>
+          {gameOver ? (
+            <div className="gameOver-displays">
+              <Display text={"Game Over!"}></Display>
+              <Display text={`Score: ${score}`}></Display>
+              <Display text={`Fruit: ${total_eaten}`}></Display>
+              <StartButton callback={startGame}>Start Game</StartButton>
+            </div>
+          ) : (
+            <div id="snake-displays">
+              <Display text={`Score: ${score}`}></Display>
+              <Display text={`Fruit: ${total_eaten}`}></Display>
+              <StartButton callback={startGame}>Start Game</StartButton>
+            </div>
+          )}
         </aside>
+        <div className="instructions">
+          <h2> Welcome to Snake!</h2>
+          <p>
+            This is a very basic implementation of the well known game Snake!
+          </p>
+          <h3>Instructions:</h3>
+          <p>
+            To start the game simply press the "start button" the aim of the
+            game is to grow your "snake" as long as possible by eating the green
+            food source on the screen. The game is over when your snake collides
+            the edge of the playing field or itself.
+          </p>
+          <br />
+          <p>
+            You can move by using your computer arrows and pressing left right
+            or down. To rotate the shape press the up arrow. Pressing enter will
+            reset your current game.
+          </p>
+          <br />
+          <p>
+            If you wish to play other games you can go back to the{" "}
+            <a href="/homepage">homepage</a>.
+          </p>
+        </div>
       </StyledSnake>
     </StyledSnakeWrapper>
   );
