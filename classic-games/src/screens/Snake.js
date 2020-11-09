@@ -23,6 +23,7 @@ import StartButton from "../components/Start_button";
 function Snake(props) {
   const stage_canvas = useRef();
   const [dir, setDir] = useState([0, -1]);
+  const [currentKeycode, setCurrentKeycode] = useState(38);
   const [snake, setSnake] = useState(SNAKE_START);
   const [fruit, setFruit] = useState(FRUIT_START);
   const [speed, setSpeed] = useState(null);
@@ -50,7 +51,21 @@ function Snake(props) {
     fruit.map((_a, i) => Math.floor(Math.random() * (SNAKE_STAGE[i] / SCALE)));
 
   const moveSnake = ({ keyCode }) => {
-    keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
+    //old move snake code
+    //keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
+
+    //updated it so that you cant press the opposite direction of where the snake is going and end the game.
+    if (keyCode >= 37 && keyCode <= 40) {
+      //console.log(dir, DIRECTIONS[keyCode]);
+      if (keyCode + 2 === currentKeycode || keyCode - 2 === currentKeycode) {
+        console.log("here");
+        return;
+      } else {
+        console.log(keyCode, currentKeycode);
+        setDir(DIRECTIONS[keyCode]);
+        setCurrentKeycode(keyCode);
+      }
+    }
   };
 
   //collision method to see if the snake has collided with any of the stage borders or another part of itself
