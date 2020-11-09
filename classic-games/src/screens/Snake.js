@@ -75,6 +75,8 @@ function Snake(props) {
   const checkAppleCollision = (newSnake) => {
     if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
       //window.alert("inside the check apple if loop");
+      setScore((prev) => prev + 10);
+      setTotal_eaten((prev) => prev + 1);
       let newApple = createApple();
       while (checkCollision(newApple, newSnake)) {
         newApple = createApple();
