@@ -29,6 +29,7 @@ function Snake(props) {
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
   const [total_eaten, setTotal_eaten] = useState(0);
+  const [current_fruit, setCurrentFruit] = useState("red");
 
   useInterval(() => gameLoop(), speed);
 
@@ -75,7 +76,7 @@ function Snake(props) {
   const randomFruit = () => {
     const fruit_colors = ["red", "purple", "gold", "orange", "blue"];
     const next = fruit_colors[Math.floor(Math.random() * fruit_colors.length)];
-    return next;
+    setCurrentFruit(next);
   };
 
   //checks to see if the current snake heads new move has collided with the fruit object of the game.
@@ -92,6 +93,7 @@ function Snake(props) {
         newFruit = createFruit();
       }
       setFruit(newFruit);
+      randomFruit();
       return true;
     }
     return false;
@@ -116,7 +118,7 @@ function Snake(props) {
 
     context.fillStyle = "green";
     snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
-    context.fillStyle = randomFruit();
+    context.fillStyle = current_fruit;
     context.fillRect(fruit[0], fruit[1], 1, 1);
   }, [snake, fruit, gameOver]);
 
