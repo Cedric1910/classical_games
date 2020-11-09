@@ -1,6 +1,13 @@
 import styled from "styled-components";
+import bgImage from "../../img/snake_wallpaper.jpg";
 
-export const StyledSnakeWrapper = styled.div``;
+export const StyledSnakeWrapper = styled.div`
+  background-image: url(${bgImage});
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
+`;
 
 export const StyledSnake = styled.div`
   padding-top: 2%;
