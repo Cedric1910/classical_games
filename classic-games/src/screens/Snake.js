@@ -71,6 +71,13 @@ function Snake(props) {
     return false;
   };
 
+  //creates a random color from a pre-defined array to display which color the next fruit will be
+  const randomFruit = () => {
+    const fruit_colors = ["red", "purple", "gold", "orange", "blue"];
+    const next = fruit_colors[Math.floor(Math.random() * fruit_colors.length)];
+    return next;
+  };
+
   //checks to see if the current snake heads new move has collided with the fruit object of the game.
   const checkFruitCollision = (newSnake) => {
     if (newSnake[0][0] === fruit[0] && newSnake[0][1] === fruit[1]) {
@@ -109,7 +116,7 @@ function Snake(props) {
 
     context.fillStyle = "green";
     snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
-    context.fillStyle = "red";
+    context.fillStyle = randomFruit();
     context.fillRect(fruit[0], fruit[1], 1, 1);
   }, [snake, fruit, gameOver]);
 
