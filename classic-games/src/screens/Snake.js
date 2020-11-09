@@ -8,7 +8,7 @@ import {
 import {
   SNAKE_STAGE,
   SNAKE_START,
-  APPLE_START,
+  FRUIT_START,
   SCALE,
   SPEED,
   DIRECTIONS,
@@ -24,7 +24,7 @@ function Snake(props) {
   const stage_canvas = useRef();
   const [dir, setDir] = useState([0, -1]);
   const [snake, setSnake] = useState(SNAKE_START);
-  const [apple, setApple] = useState(APPLE_START);
+  const [fruit, setFruit] = useState(FRUIT_START);
   const [speed, setSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
@@ -34,7 +34,7 @@ function Snake(props) {
 
   const startGame = () => {
     setSnake(SNAKE_START);
-    setApple(APPLE_START);
+    setFruit(FRUIT_START);
     setDir([0, -1]);
     setSpeed(SPEED);
     setGameOver(false);
@@ -45,8 +45,8 @@ function Snake(props) {
     setGameOver(true);
   };
 
-  const createApple = () =>
-    apple.map((_a, i) => Math.floor(Math.random() * (SNAKE_STAGE[i] / SCALE)));
+  const createFruit = () =>
+    fruit.map((_a, i) => Math.floor(Math.random() * (SNAKE_STAGE[i] / SCALE)));
 
   const moveSnake = ({ keyCode }) => {
     keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
@@ -71,17 +71,20 @@ function Snake(props) {
     return false;
   };
 
-  //checks to see if the current snake heads new move has collided with the apple object of the game.
-  const checkAppleCollision = (newSnake) => {
-    if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
-      //window.alert("inside the check apple if loop");
+  //checks to see if the current snake heads new move has collided with the fruit object of the game.
+  const checkFruitCollision = (newSnake) => {
+    if (newSnake[0][0] === fruit[0] && newSnake[0][1] === fruit[1]) {
+      //window.alert("inside the check fruit if loop");
+
+      //update the score and fruit eaten displays
       setScore((prev) => prev + 10);
       setTotal_eaten((prev) => prev + 1);
-      let newApple = createApple();
-      while (checkCollision(newApple, newSnake)) {
-        newApple = createApple();
+
+      let newFruit = createFruit();
+      while (checkCollision(newFruit, newSnake)) {
+        newFruit = createFruit();
       }
-      setApple(newApple);
+      setFruit(newFruit);
       return true;
     }
     return false;
@@ -94,7 +97,7 @@ function Snake(props) {
     //console.log(newSnakeHead);
     snakeCopy.unshift(newSnakeHead);
     if (checkCollision(newSnakeHead)) endGame();
-    if (!checkAppleCollision(snakeCopy)) snakeCopy.pop();
+    if (!checkFruitCollision(snakeCopy)) snakeCopy.pop();
     //snakeCopy.pop();
     setSnake(snakeCopy);
   };
@@ -107,8 +110,8 @@ function Snake(props) {
     context.fillStyle = "green";
     snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
     context.fillStyle = "red";
-    context.fillRect(apple[0], apple[1], 1, 1);
-  }, [snake, apple, gameOver]);
+    context.fillRect(fruit[0], fruit[1], 1, 1);
+  }, [snake, fruit, gameOver]);
 
   return (
     <StyledSnakeWrapper>

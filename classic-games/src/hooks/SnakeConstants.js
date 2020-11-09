@@ -5,7 +5,7 @@ const SNAKE_START = [
   [14, 14],
 ];
 
-const APPLE_START = [14, 5]; //sets where the first apple will be, later will make a randomiser function for the start
+const FRUIT_START = [14, 5]; //sets where the first apple will be, later will make a randomiser function for the start
 
 const SCALE = 20;
 const SPEED = 90;
@@ -18,4 +18,4 @@ const DIRECTIONS = {
   39: [1, 0], // right
 };
 
-export { SNAKE_STAGE, SNAKE_START, APPLE_START, SCALE, SPEED, DIRECTIONS };
+export { SNAKE_STAGE, SNAKE_START, FRUIT_START, SCALE, SPEED, DIRECTIONS };
