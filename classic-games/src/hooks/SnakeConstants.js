@@ -1,4 +1,4 @@
-const SNAKE_STAGE = [550, 560]; //sets snake stage dimensions
+const SNAKE_STAGE = [560, 560]; //sets snake stage dimensions
 //sets snake starting point
 const SNAKE_START = [
   [14, 13],

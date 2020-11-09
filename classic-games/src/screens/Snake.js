@@ -14,6 +14,9 @@ import {
   DIRECTIONS,
 } from "../hooks/SnakeConstants";
 
+import Display from "../components/TetrisDisplay";
+import StartButton from "../components/Start_button";
+
 /* This function will hold all the code needed to run Snake since its such a simple coded game so I didnt feel the 
    Create multiple different classes like Tetris. 
  */
@@ -24,6 +27,7 @@ function Snake(props) {
   const [apple, setApple] = useState(APPLE_START);
   const [speed, setSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState(0);
 
   useInterval(() => gameLoop(), speed);
 
@@ -105,23 +109,28 @@ function Snake(props) {
 
   return (
     <StyledSnakeWrapper>
-      <StyledSnake>
-        <div className="temp_body">
+      <StyledSnake role="button" tabIndex="0" onKeyDown={(e) => moveSnake(e)}>
+        {/* <div className="temp_body">
           <h1 align="center">Snake Game</h1>
           <p align="center">
             If you wish to play other games you can go back to the{" "}
             <a href="/homepage">homepage</a>.
           </p>
-        </div>
-        <div role="button" tabIndex="0" onKeyDown={(e) => moveSnake(e)}>
+        </div> */}
+        <div>
           <canvas
             ref={stage_canvas}
             width={`${SNAKE_STAGE[0]}px`}
             height={`${SNAKE_STAGE[1]}px`}
           />
           {gameOver && <div>GAME OVER!</div>}
-          <button onClick={startGame}>Start Game</button>
         </div>
+        <aside>
+          <div id="snake-displays">
+            <Display text={`Score: ${score}`}></Display>
+            <StartButton callback={startGame}>Start Game</StartButton>
+          </div>
+        </aside>
       </StyledSnake>
     </StyledSnakeWrapper>
   );
