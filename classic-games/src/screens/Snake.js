@@ -102,22 +102,15 @@ function Snake(props) {
     context.setTransform(SCALE, 0, 0, SCALE, 0, 0);
     context.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-    context.fillStyle = "red";
-    snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
     context.fillStyle = "green";
+    snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
+    context.fillStyle = "red";
     context.fillRect(apple[0], apple[1], 1, 1);
   }, [snake, apple, gameOver]);
 
   return (
     <StyledSnakeWrapper>
       <StyledSnake role="button" tabIndex="0" onKeyDown={(e) => moveSnake(e)}>
-        {/* <div className="temp_body">
-          <h1 align="center">Snake Game</h1>
-          <p align="center">
-            If you wish to play other games you can go back to the{" "}
-            <a href="/homepage">homepage</a>.
-          </p>
-        </div> */}
         <div>
           <canvas
             ref={stage_canvas}
@@ -153,13 +146,10 @@ function Snake(props) {
             food source on the screen. The game is over when your snake collides
             the edge of the playing field or itself.
           </p>
-          <br />
           <p>
-            You can move by using your computer arrows and pressing left right
-            or down. To rotate the shape press the up arrow. Pressing enter will
-            reset your current game.
+            You can move in the direction you want by pressing the arrow keys.
+            If you wish to restart your current game simply press enter.
           </p>
-          <br />
           <p>
             If you wish to play other games you can go back to the{" "}
             <a href="/homepage">homepage</a>.

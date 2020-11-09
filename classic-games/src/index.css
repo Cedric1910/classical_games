@@ -34,7 +34,15 @@ a {
   background-image: url("./img/tetris_btn_img.png");
   opacity: 100%;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100%;
+  overflow: hidden;
+}
+
+.snake_div:hover {
+  background-image: url("./img/snake_btn_img.png");
+  opacity: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
   overflow: hidden;
 }
 

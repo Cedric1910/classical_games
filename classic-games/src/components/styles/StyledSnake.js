@@ -15,7 +15,7 @@ export const StyledSnake = styled.div`
   canvas {
     background: black;
     border: 4px solid #333;
-    opacity: 90%;
+    opacity: 85%;
   }
 
   aside {
@@ -24,9 +24,10 @@ export const StyledSnake = styled.div`
   }
   .instructions {
     width: 100%;
+    opacity: 85%;
     max-width: 600px;
     height: 100%;
-    color: #999;
+    color: #e0e0e0;
     margin: 0 0 20px 0;
     padding: 20px;
     border: 4px solid #333;
