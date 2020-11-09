@@ -72,11 +72,29 @@ function Snake(props) {
     return false;
   };
 
-  //creates a random color from a pre-defined array to display which color the next fruit will be
+  /* Chooses the next fruits color based on a distributed array of pre-determined options */
   const randomFruit = () => {
-    const fruit_colors = ["red", "orange", "blue", "purple", "gold"];
-    const next = fruit_colors[Math.floor(Math.random() * fruit_colors.length)];
+    //old random fruit code
+    // const fruit_colors = ["red", "orange", "blue", "purple", "gold"];
+    // const next = fruit_colors[Math.floor(Math.random() * fruit_colors.length)];
+    // setCurrentFruit(next);
+
+    const fruit_colors = [
+      "red", //40% chance
+      "green", //30% chance
+      "blue", //15% chance
+      "purple", //10% chance
+      "gold", //5% chance
+    ];
+
+    var chances = [40, 30, 15, 10, 5]; //Chances of being selected
+    var sum = chances.reduce((acc, el) => acc + el, 0);
+    var acc = 0;
+    chances = chances.map((el) => (acc = el + acc));
+    var rand = Math.random() * sum;
+    var next = fruit_colors[chances.filter((el) => el <= rand).length];
     setCurrentFruit(next);
+    //console.log(current_fruit);
   };
 
   //checks to see if the current snake heads new move has collided with the fruit object of the game.
@@ -87,7 +105,7 @@ function Snake(props) {
       //if loop to see which colour the fruit was and what points to update by.
       if (current_fruit === "red") {
         setScore((prev) => prev + 10);
-      } else if (current_fruit === "orange") {
+      } else if (current_fruit === "green") {
         setScore((prev) => prev + 15);
       } else if (current_fruit === "blue") {
         setScore((prev) => prev + 20);
