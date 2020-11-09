@@ -1,14 +1,14 @@
-const SNAKE_STAGE = [600, 600]; //sets snake stage dimensions
+const SNAKE_STAGE = [550, 560]; //sets snake stage dimensions
 //sets snake starting point
 const SNAKE_START = [
-  [15, 14],
-  [15, 15],
+  [14, 13],
+  [14, 14],
 ];
 
-const APPLE_START = [15, 5]; //sets where the first apple will be, later will make a randomiser function for the start
+const APPLE_START = [14, 5]; //sets where the first apple will be, later will make a randomiser function for the start
 
 const SCALE = 20;
-const SPEED = 75; //Move 1 block per second
+const SPEED = 90;
 
 //directions based on the current key being pressed.
 const DIRECTIONS = {

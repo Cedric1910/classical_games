@@ -96,6 +96,7 @@ function Snake(props) {
     const context = stage_canvas.current.getContext("2d");
     context.setTransform(SCALE, 0, 0, SCALE, 0, 0);
     context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
     context.fillStyle = "red";
     snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
     context.fillStyle = "green";
