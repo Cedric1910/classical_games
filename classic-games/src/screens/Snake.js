@@ -74,7 +74,7 @@ function Snake(props) {
 
   //creates a random color from a pre-defined array to display which color the next fruit will be
   const randomFruit = () => {
-    const fruit_colors = ["red", "purple", "gold", "orange", "blue"];
+    const fruit_colors = ["red", "orange", "blue", "purple", "gold"];
     const next = fruit_colors[Math.floor(Math.random() * fruit_colors.length)];
     setCurrentFruit(next);
   };
@@ -84,16 +84,27 @@ function Snake(props) {
     if (newSnake[0][0] === fruit[0] && newSnake[0][1] === fruit[1]) {
       //window.alert("inside the check fruit if loop");
 
-      //update the score and fruit eaten displays
-      setScore((prev) => prev + 10);
-      setTotal_eaten((prev) => prev + 1);
+      //if loop to see which colour the fruit was and what points to update by.
+      if (current_fruit === "red") {
+        setScore((prev) => prev + 10);
+      } else if (current_fruit === "orange") {
+        setScore((prev) => prev + 15);
+      } else if (current_fruit === "blue") {
+        setScore((prev) => prev + 20);
+      } else if (current_fruit === "purple") {
+        setScore((prev) => prev + 50);
+      } else if (current_fruit === "gold") {
+        setScore((prev) => prev + 100);
+      }
+
+      setTotal_eaten((prev) => prev + 1); // updates the total eaten display
 
       let newFruit = createFruit();
       while (checkCollision(newFruit, newSnake)) {
         newFruit = createFruit();
       }
-      setFruit(newFruit);
-      randomFruit();
+      setFruit(newFruit); //sets the new fruit
+      randomFruit(); //sets a random colour for the new fruit
       return true;
     }
     return false;
