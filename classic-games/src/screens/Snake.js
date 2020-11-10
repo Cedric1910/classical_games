@@ -51,6 +51,7 @@ function Snake(props) {
     fruit.map((_a, i) => Math.floor(Math.random() * (SNAKE_STAGE[i] / SCALE)));
 
   const moveSnake = ({ keyCode }) => {
+    //console.log(keyCode);
     //old move snake code
     //keyCode >= 37 && keyCode <= 40 && setDir(DIRECTIONS[keyCode]);
 
@@ -58,13 +59,17 @@ function Snake(props) {
     if (keyCode >= 37 && keyCode <= 40) {
       //console.log(dir, DIRECTIONS[keyCode]);
       if (keyCode + 2 === currentKeycode || keyCode - 2 === currentKeycode) {
-        console.log("here");
+        //console.log("here");
         return;
       } else {
-        console.log(keyCode, currentKeycode);
+        //console.log(keyCode, currentKeycode);
         setDir(DIRECTIONS[keyCode]);
         setCurrentKeycode(keyCode);
       }
+    }
+    //reset the game when pressing return.
+    if (keyCode === 13) {
+      startGame();
     }
   };
 
@@ -93,7 +98,6 @@ function Snake(props) {
     // const fruit_colors = ["red", "orange", "blue", "purple", "gold"];
     // const next = fruit_colors[Math.floor(Math.random() * fruit_colors.length)];
     // setCurrentFruit(next);
-
     const fruit_colors = [
       "red", //40% chance
       "green", //30% chance
@@ -167,8 +171,12 @@ function Snake(props) {
   }, [snake, fruit, gameOver]);
 
   return (
-    <StyledSnakeWrapper>
-      <StyledSnake role="button" tabIndex="0" onKeyDown={(e) => moveSnake(e)}>
+    <StyledSnakeWrapper
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => moveSnake(e)}
+    >
+      <StyledSnake>
         <div>
           <canvas
             ref={stage_canvas}
@@ -178,19 +186,18 @@ function Snake(props) {
         </div>
         <aside>
           {gameOver ? (
-            <div className="gameOver-displays">
+            <div>
               <Display text={"Game Over!"}></Display>
               <Display text={`Score: ${score}`}></Display>
               <Display text={`Fruit: ${total_eaten}`}></Display>
-              <StartButton callback={startGame}>Start Game</StartButton>
             </div>
           ) : (
             <div id="snake-displays">
               <Display text={`Score: ${score}`}></Display>
               <Display text={`Fruit: ${total_eaten}`}></Display>
-              <StartButton callback={startGame}>Start Game</StartButton>
             </div>
           )}
+          <StartButton callback={startGame}>Start Game</StartButton>
         </aside>
         <div className="instructions">
           <h2> Welcome to Snake!</h2>
