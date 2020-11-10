@@ -215,6 +215,15 @@ function Snake(props) {
             You can move in the direction you want by pressing the arrow keys.
             If you wish to restart your current game simply press enter.
           </p>
+
+          <h3>Points:</h3>
+          <p>
+            Red: 10 <br />
+            Green: 15 <br />
+            Blue: 20 <br />
+            Purple: 50 <br />
+            Gold: 100
+          </p>
           <p>
             If you wish to play other games you can go back to the{" "}
             <a href="/homepage">homepage</a>.
